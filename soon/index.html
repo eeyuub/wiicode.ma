@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قريباً | wiicode.ma</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        'king-green': {
+                            900: '#013220', // Deepest green
+                            800: '#0b4630',
+                            700: '#155d42',
+                        },
+                        'royal-gold': {
+                            400: '#d4af37',
+                            500: '#c5a059',
+                            600: '#aa8c49',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'gradient-x': 'gradientX 15s ease infinite',
+                        'shimmer': 'shimmer 2s infinite linear',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        gradientX: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #013220;
+        }
+        .glass-card {
+            background: rgba(11, 70, 48, 0.4); /* Green tinted glass */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.2); /* Gold border hint */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+        /* Custom Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative overflow-hidden font-sans text-white selection:bg-royal-gold-500 selection:text-black">
+
+    <!-- Animated Background Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-king-green-900 via-[#004d33] to-black animate-gradient-x bg-[length:200%_200%] z-0"></div>
+
+    <!-- Overlay Texture/Pattern (Optional noise) -->
+    <div class="absolute inset-0 opacity-[0.03] z-0" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    <!-- Animated Background Blobs (Green & Gold) -->
+    <div class="absolute top-0 -left-4 w-96 h-96 bg-green-700 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-1/2 -right-4 w-80 h-80 bg-royal-gold-600 rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-emerald-800 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 w-full max-w-xl px-4 mx-auto">
+        <div class="glass-card rounded-2xl p-8 md:p-12 text-center animate-fade-in-up border-t border-white/10">
+            
+            <!-- Logo Area -->
+            <div class="mb-8 flex justify-center">
+                <!-- Using the LargeLogo as requested, with a fallback just in case -->
+                <img src="asset/LargeLogo.png" alt="wiicode.ma Logo" class="h-16 md:h-20 object-contain drop-shadow-lg" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex'">
+                
+                <!-- Fallback if image fails to load -->
+                <div id="fallback-logo" class="hidden items-center justify-center w-20 h-20 rounded-full bg-king-green-800 border border-royal-gold-500/30 text-royal-gold-400 shadow-[0_0_15px_rgba(197,160,89,0.3)]">
+                    <span class="font-bold text-2xl">W</span>
+                </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight drop-shadow-md text-gold-gradient">
+                قريباً... <br/>
+                <span class="text-gold-gradient">غنبداو الرحلة</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed font-light">
+                عندك فكرة ديال شي مشروع تقني وباغي تطبقها؟ <br class="hidden md:block">
+                <span class="text-royal-gold-400 font-semibold dir-ltr inline-block">wiicode.ma</span> هنا باش تعاونك تبني أول <span class="text-royal-gold-400 font-semibold dir-ltr inline-block">MVP</span> ديالك بلا مشاكل تقنية.
+            </p>
+
+            <!-- Divider -->
+            <div class="flex items-center justify-center gap-2 mb-8 opacity-50">
+                <div class="w-12 h-[1px] bg-royal-gold-500"></div>
+                <div class="w-2 h-2 rotate-45 border border-royal-gold-500"></div>
+                <div class="w-12 h-[1px] bg-royal-gold-500"></div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="space-y-4">
+                <p class="text-sm text-gray-400 font-medium">كن أول واحد يوصلو الجديد:</p>
+                
+                <a href="https://instagram.com/wiicode.ma" target="_blank" class="group relative overflow-hidden flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-900 to-king-green-900 border border-white/10 hover:border-royal-gold-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(11,70,48,0.6)]">
+                    <!-- Insta Gradient Background Hover Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    
+                    <i class="fa-brands fa-instagram text-2xl text-royal-gold-400 group-hover:text-white transition-colors relative z-10"></i>
+                    <span class="text-white font-bold text-lg relative z-10">تابعنا ف انستغرام</span>
+                    <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform relative z-10"></i>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-10 pt-6 border-t border-white/5 flex flex-col items-center gap-2">
+                <p class="text-xs text-gray-500 font-light">
+                    &copy; 2025 Wiicode.ma | طور فكرتك، بني مستقبلك
+                </p>
+                <!-- Small branding logo -->
+                <img src="SmallLogo.png" alt="icon" class="h-6 opacity-40 hover:opacity-80 transition-opacity" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
