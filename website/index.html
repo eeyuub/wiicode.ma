@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiicode.ma | شريكك التقني لبناء المستقبل</title>
+    <meta name="description" content="حول فكرتك إلى مشروع حقيقي. نحن نبني لك MVP احترافي بدون تعقيدات تقنية.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="asset/SmallLogo.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        'king-green': {
+                            950: '#002416',
+                            900: '#013220',
+                            800: '#0b4630',
+                            700: '#155d42',
+                            600: '#1e7e5a',
+                        },
+                        'royal-gold': {
+                            300: '#e5c56d',
+                            400: '#d4af37',
+                            500: '#c5a059',
+                            600: '#aa8c49',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 10s infinite',
+                        'shimmer': 'shimmer 2s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #002416;
+            color: #f3f4f6;
+        }
+        .glass {
+            background: rgba(11, 70, 48, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .glass-strong {
+            background: rgba(1, 50, 32, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(197, 160, 89, 0.15);
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-royal-gold-500 selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-strong transition-all duration-300" x-data="{ atTop: true, mobileMenu: false }" @scroll.window="atTop = (window.pageYOffset < 20)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="asset/LargeLogo.png" alt="Wiicode Logo" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="#home" class="hover:text-royal-gold-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">الرئيسية</a>
+                        <a href="#services" class="hover:text-royal-gold-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">خدماتنا</a>
+                        <a href="#process" class="hover:text-royal-gold-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">كيفاش كنخدمو</a>
+                        <a href="#faq" class="hover:text-royal-gold-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">أسئلة شائعة</a>
+                        <a href="#contact" class="bg-royal-gold-500 text-black hover:bg-royal-gold-400 px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-lg shadow-royal-gold-500/20">ابدا مشروعك</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenu = !mobileMenu" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" x-show="!mobileMenu"></i>
+                        <i class="fa-solid fa-xmark text-2xl" x-show="mobileMenu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenu" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-5"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-5"
+             class="md:hidden glass border-t border-white/5 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center text-center">
+                <a href="#home" @click="mobileMenu = false" class="text-gray-300 hover:text-royal-gold-400 block px-3 py-4 rounded-md text-base font-medium w-full">الرئيسية</a>
+                <a href="#services" @click="mobileMenu = false" class="text-gray-300 hover:text-royal-gold-400 block px-3 py-4 rounded-md text-base font-medium w-full">خدماتنا</a>
+                <a href="#process" @click="mobileMenu = false" class="text-gray-300 hover:text-royal-gold-400 block px-3 py-4 rounded-md text-base font-medium w-full">كيفاش كنخدمو</a>
+                <a href="#faq" @click="mobileMenu = false" class="text-gray-300 hover:text-royal-gold-400 block px-3 py-4 rounded-md text-base font-medium w-full">أسئلة شائعة</a>
+                <a href="#contact" @click="mobileMenu = false" class="bg-royal-gold-500 text-black block px-8 py-3 rounded-full text-base font-bold mt-4 w-3/4 mx-auto">ابدا مشروعك</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 -left-20 w-[500px] h-[500px] bg-king-green-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-blob"></div>
+            <div class="absolute bottom-0 -right-20 w-[600px] h-[600px] bg-royal-gold-600 rounded-full mix-blend-screen filter blur-[120px] opacity-10 animate-blob animation-delay-2000"></div>
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-royal-gold-500/30 text-royal-gold-400 text-sm font-medium mb-8 animate-fade-in-up">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-royal-gold-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-royal-gold-500"></span>
+                </span>
+                نقبل الآن مشاريع جديدة
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight tracking-tight">
+                عندك فكرة؟ <br />
+                <span class="text-gradient">حنا نتكلفو بالكود</span>
+            </h1>
+
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                من الفكرة إلى <span class="text-royal-gold-400 font-bold font-mono">MVP</span>.
+                Wiicode.ma هو شريكك التقني باش تطلق المشروع ديالك بلا ما توحل فالمشاكل التقنية. ركز نتا فالبزنس، وخلي التكنولوجيا علينا.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="group relative px-8 py-4 bg-royal-gold-500 text-black text-lg font-bold rounded-full overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(197,160,89,0.4)]">
+                    <div class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full skew-x-12 group-hover:animate-shimmer"></div>
+                    <span class="relative flex items-center gap-2">
+                        احجز استشارة مجانية
+                        <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+                    </span>
+                </a>
+                <a href="#services" class="px-8 py-4 glass text-white text-lg font-medium rounded-full hover:bg-white/5 transition-all border border-white/10 hover:border-royal-gold-500/30">
+                    كتشف الخدمات
+                </a>
+            </div>
+
+            <!-- Stats/Trust Indicators -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10">
+                <div>
+                    <div class="text-3xl font-bold text-royal-gold-400 mb-1">+10</div>
+                    <div class="text-sm text-gray-400">مشاريع ناجحة</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-royal-gold-400 mb-1">100%</div>
+                    <div class="text-sm text-gray-400">التزام بالوقت</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-royal-gold-400 mb-1">24/7</div>
+                    <div class="text-sm text-gray-400">دعم تقني</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-royal-gold-400 mb-1">MVP</div>
+                    <div class="text-sm text-gray-400">تخصصنا</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="py-24 relative overflow-hidden bg-king-green-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-royal-gold-500/20 to-transparent rounded-3xl blur-2xl transform -rotate-6"></div>
+                    <div class="glass rounded-3xl p-8 relative z-10 border border-white/10">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-2">كتلقى صعوبة باش تلقى مبرمجين ثقة؟</h4>
+                                    <p class="text-gray-400 text-sm">التواصل مع الفريلانسرز كيكون صعيب، والجودة ماشي ديما مضمونة.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-2">ماكايناش خبرة تقنية؟</h4>
+                                    <p class="text-gray-400 text-sm">عندك الفكرة ولكن ماعارفش كيفاش تبدا تقنياً وشنو هما لغات البرمجة اللي خاصك.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl mb-2">التكاليف غالية؟</h4>
+                                    <p class="text-gray-400 text-sm">الشركات الكبيرة كتطلب ميزانيات ضخمة باش تصاوب ليك غير البداية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">الحل عندنا بسيط. <br><span class="text-royal-gold-400">ركز نتا فالفكرة.</span></h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Wiicode جات باش تحل هاد المشاكل. حنا فريق متكامل كيوجد ليك الـ MVP (المنتج الأولي) ديالك فواحد الوقت قياسي وبجودة عالية.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-royal-gold-400"></i>
+                            <span>فريق تقني محترف ومغربي 100%</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-royal-gold-400"></i>
+                            <span>كود نقي وقابل للتطوير (Scalable)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-royal-gold-400"></i>
+                            <span>تسليم سريع باش تبدا تبيع</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">شنو كنقدمو ليك؟</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">خدمات مصممة خصيصاً لأصحاب المشاريع الناشئة</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">تطوير MVP</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        كنحول فكرتك لمنتج أولي خدام، فيه الخصائص الأساسية باش تقدر تيستيه فالسوق وتجمع أول كليان.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web & Mobile Apps</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        تطبيقات عصرية، سريعة، ومتجاوبة مع جميع الأجهزة (Responsive)، بتصاميم كتحمر الوجه.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">استشارة تقنية</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        ماعرفش اشمن تكنولوجي تختار؟ حنا هنا باش نعطيوك احسن الحلول اللي تناسب الميزانية والأهداف ديالك.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-king-green-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">رحلة المشروع ديالك</h2>
+                <p class="text-gray-400">خطوات بسيطة وواضحة</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 right-0 left-0 h-0.5 bg-white/10 -translate-y-1/2 z-0"></div>
+
+                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">جلسة التعارف</h3>
+                        <p class="text-sm text-gray-400">كنسمعو منك الفكرة وكنفهمو مزيان شنو باغي توصل.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">التخطيط والتصميم</h3>
+                        <p class="text-sm text-gray-400">كنرسمو خطة العمل والواجهات (UI/UX) باش تكون الرؤية واضحة.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">التطوير (Coding)</h3>
+                        <p class="text-sm text-gray-400">الفريق ديالنا كيبدا يكتب الكود ويبني المشروع ديالك.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                            4
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">الإطلاق والدعم</h3>
+                        <p class="text-sm text-gray-400">مبروك! المشروع واجد. وحنا كنبقاو معاك باش نتأكدو كلشي غادي مزيان.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Alpine.js) -->
+    <section id="faq" class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">أسئلة كطرح بزاف</h2>
+            </div>
+
+            <div class="space-y-4" x-data="{ selected: null }">
+                <!-- Item 1 -->
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 1 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                    <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
+                        <span class="font-bold text-lg">واش ضروري تكون عندي معرفة تقنية؟</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 1 ? 'rotate-180 text-royal-gold-400' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed" x-show="selected === 1" x-collapse>
+                        لا، نهائياً. هادشي علاش حنا هنا. نتا ركز فالفكرة والبيزنس، وحنا كنتكلفو بالجانب التقني كامل من A ل Z. وشرحو ليك كلشي بطريقة مبسطة.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 2 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                    <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
+                        <span class="font-bold text-lg">شحال ديال الوقت كياخد المشروع؟</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 2 ? 'rotate-180 text-royal-gold-400' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed" x-show="selected === 2" x-collapse>
+                        على حسب حجم المشروع. ولكن بالنسبة لـ MVP (منتج أولي)، غالباً كياخد ما بين 2 حتى لـ 6 سيمانات. الهدف ديالنا هو تخرج للسوق دغيا.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 3 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                    <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
+                        <span class="font-bold text-lg">واش الكود كيكون ديالي؟</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 3 ? 'rotate-180 text-royal-gold-400' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed" x-show="selected === 3" x-collapse>
+                        أكيد! من بعد ما كنساليو وتسلم المشروع، الكود سورس (Source Code) كلو كيولي ملك ديالك 100% وتقدر دير بيه لي بغيتي.
+                    </div>
+                </div>
+                
+                 <!-- Item 4 -->
+                 <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 4 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                    <button @click="selected !== 4 ? selected = 4 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
+                        <span class="font-bold text-lg">شنو كيوقع من بعد ما كتساليو؟</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 4 ? 'rotate-180 text-royal-gold-400' : ''"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-gray-400 leading-relaxed" x-show="selected === 4" x-collapse>
+                        كنبقاو معاك فترة ديال الدعم التقني (Support) باش نتأكدو أن كلشي خدام مزيان. وإلا بغيتي نزيدو خصائص جديدة، حنا ديما موجودين.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl overflow-hidden p-12 md:p-20 text-center">
+                <!-- Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-royal-gold-600 to-king-green-800 opacity-90"></div>
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 mix-blend-overlay"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 text-white drop-shadow-lg">مستعد تبدا؟</h2>
+                    <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                        ما تخليش فكرتك تبقى غير فكرة. تواصل معنا دابا و يلاه نبنيو المستقبل ديالك.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/212762545638?text=Salam%20Wiicode%2C%20bghit%20nstafser%203la%20lkhadamat%20dyalkom." target="_blank" class="px-8 py-4 bg-white text-king-green-900 text-lg font-bold rounded-full hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
+                            تواصل عبر واتساب
+                        </a>
+                        <a href="https://www.instagram.com/wiicode.ma" target="_blank" class="px-8 py-4 bg-king-green-900/50 backdrop-blur-sm text-white border border-white/30 text-lg font-bold rounded-full hover:bg-king-green-900 transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 opacity-80">
+                <img src="asset/LargeLogo.png" alt="Logo" class="h-8 grayscale">
+            </div>
+            
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Wiicode.ma. جميع الحقوق محفوظة.
+            </p>
+            
+            <div class="flex gap-6 text-gray-400">
+                <a href="https://www.instagram.com/wiicode.ma/" target="_blank" class="hover:text-royal-gold-400 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <!-- <a href="#" class="hover:text-royal-gold-400 transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-royal-gold-400 transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a> -->
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
