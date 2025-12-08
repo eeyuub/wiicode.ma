@@ -23,6 +23,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="asset/SmallLogo.png">
 
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -161,7 +164,7 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-royal-gold-500/30 text-royal-gold-400 text-sm font-medium mb-8 animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-royal-gold-500/30 text-royal-gold-400 text-sm font-medium mb-8 animate-fade-in-up" data-aos="fade-down">
                 <span class="relative flex h-3 w-3">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-royal-gold-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-royal-gold-500"></span>
@@ -169,18 +172,18 @@
                 نقبل الآن مشاريع جديدة
             </div>
 
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight tracking-tight">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight tracking-tight" data-aos="fade-up" data-aos-duration="1000">
                 عندك فكرة؟ <br />
                 <span class="text-gradient">حنا نتكلفو بالكود</span>
             </h1>
 
-            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200">
                 حول رؤيتك إلى واقع ملموس مع شريك تقني كيفهم احتياجاتك. 
                 في <span class="text-royal-gold-400 font-bold font-mono">Wiicode</span>، كنرافقوك من مرحلة الفكرة حتى لإطلاق المنتج <span class="text-royal-gold-400 font-bold font-mono">(MVP)</span>. 
                 خلينا نهزوا عليك ثقل البرمجة والتكنولوجيا، باش تركز نتا فتكبير المشروع ديالك.
             </p>
 
-            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
                 <a href="#contact" class="group relative px-8 py-4 bg-royal-gold-500 text-black text-lg font-bold rounded-full overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(197,160,89,0.4)]">
                     <div class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full skew-x-12 group-hover:animate-shimmer"></div>
                     <span class="relative flex items-center gap-2">
@@ -194,7 +197,7 @@
             </div>
 
             <!-- Stats/Trust Indicators -->
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10">
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-10" data-aos="fade-up" data-aos-delay="600">
                 <div>
                     <div class="text-3xl font-bold text-royal-gold-400 mb-1">+10</div>
                     <div class="text-sm text-gray-400">مشاريع ناجحة</div>
@@ -219,7 +222,7 @@
     <section class="py-24 relative overflow-hidden bg-king-green-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative">
+                <div class="relative" data-aos="fade-left">
                     <div class="absolute inset-0 bg-gradient-to-r from-royal-gold-500/20 to-transparent rounded-3xl blur-2xl transform -rotate-6"></div>
                     <div class="glass rounded-3xl p-8 relative z-10 border border-white/10">
                         <div class="space-y-6">
@@ -254,7 +257,7 @@
                     </div>
                 </div>
                 
-                <div>
+                <div data-aos="fade-right">
                     <h2 class="text-3xl md:text-5xl font-bold mb-6">الحل عندنا بسيط. <br><span class="text-royal-gold-400">ركز نتا فالفكرة.</span></h2>
                     <p class="text-gray-300 text-lg mb-8 leading-relaxed">
                         Wiicode جات باش تحل هاد المشاكل. حنا فريق متكامل كيوجد ليك الـ MVP (المنتج الأولي) ديالك فواحد الوقت قياسي وبجودة عالية.
@@ -281,15 +284,15 @@
     <!-- Services Section -->
     <section id="services" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">شنو كنقدمو ليك؟</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">خدمات مصممة خصيصاً لأصحاب المشاريع الناشئة</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors group-hover:scale-110 duration-300">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">تطوير MVP</h3>
@@ -299,8 +302,8 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors group-hover:scale-110 duration-300">
                         <i class="fa-solid fa-mobile-screen"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Web & Mobile Apps</h3>
@@ -310,8 +313,8 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors">
+                <div class="glass p-8 rounded-2xl card-hover transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-royal-gold-500/10 rounded-xl flex items-center justify-center text-royal-gold-400 text-2xl mb-6 group-hover:bg-royal-gold-500 group-hover:text-black transition-colors group-hover:scale-110 duration-300">
                         <i class="fa-solid fa-code-branch"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">استشارة تقنية</h3>
@@ -326,7 +329,7 @@
     <!-- Process Section -->
     <section id="process" class="py-24 bg-king-green-950 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">رحلة المشروع ديالك</h2>
                 <p class="text-gray-400">خطوات بسيطة وواضحة</p>
             </div>
@@ -337,8 +340,8 @@
 
                 <div class="grid md:grid-cols-4 gap-8 relative z-10">
                     <!-- Step 1 -->
-                    <div class="text-center group">
-                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                    <div class="text-center group" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all duration-300 group-hover:scale-110 mb-6 relative">
                             1
                         </div>
                         <h3 class="text-xl font-bold mb-2">جلسة التعارف</h3>
@@ -346,8 +349,8 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="text-center group">
-                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                    <div class="text-center group" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all duration-300 group-hover:scale-110 mb-6 relative">
                             2
                         </div>
                         <h3 class="text-xl font-bold mb-2">التخطيط والتصميم</h3>
@@ -355,8 +358,8 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="text-center group">
-                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                    <div class="text-center group" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all duration-300 group-hover:scale-110 mb-6 relative">
                             3
                         </div>
                         <h3 class="text-xl font-bold mb-2">التطوير (Coding)</h3>
@@ -364,8 +367,8 @@
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="text-center group">
-                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all mb-6 relative">
+                    <div class="text-center group" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="w-20 h-20 mx-auto glass rounded-full flex items-center justify-center text-2xl font-bold border-2 border-royal-gold-500/50 group-hover:bg-royal-gold-500 group-hover:text-black transition-all duration-300 group-hover:scale-110 mb-6 relative">
                             4
                         </div>
                         <h3 class="text-xl font-bold mb-2">الإطلاق والدعم</h3>
@@ -379,13 +382,13 @@
     <!-- FAQ Section (Alpine.js) -->
     <section id="faq" class="py-24 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">أسئلة كطرح بزاف</h2>
             </div>
 
             <div class="space-y-4" x-data="{ selected: null }">
                 <!-- Item 1 -->
-                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 1 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 1 ? 'border-royal-gold-500/50' : 'border-white/5'" data-aos="fade-up" data-aos-delay="0">
                     <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
                         <span class="font-bold text-lg">واش ضروري تكون عندي معرفة تقنية؟</span>
                         <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 1 ? 'rotate-180 text-royal-gold-400' : ''"></i>
@@ -396,7 +399,7 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 2 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 2 ? 'border-royal-gold-500/50' : 'border-white/5'" data-aos="fade-up" data-aos-delay="100">
                     <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
                         <span class="font-bold text-lg">شحال ديال الوقت كياخد المشروع؟</span>
                         <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 2 ? 'rotate-180 text-royal-gold-400' : ''"></i>
@@ -407,7 +410,7 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 3 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 3 ? 'border-royal-gold-500/50' : 'border-white/5'" data-aos="fade-up" data-aos-delay="200">
                     <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
                         <span class="font-bold text-lg">واش الكود كيكون ديالي؟</span>
                         <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 3 ? 'rotate-180 text-royal-gold-400' : ''"></i>
@@ -418,7 +421,7 @@
                 </div>
                 
                  <!-- Item 4 -->
-                 <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 4 ? 'border-royal-gold-500/50' : 'border-white/5'">
+                 <div class="glass rounded-xl overflow-hidden transition-all duration-300" :class="selected === 4 ? 'border-royal-gold-500/50' : 'border-white/5'" data-aos="fade-up" data-aos-delay="300">
                     <button @click="selected !== 4 ? selected = 4 : selected = null" class="w-full p-6 text-right flex items-center justify-between hover:bg-white/5 transition-colors">
                         <span class="font-bold text-lg">شنو كيوقع من بعد ما كتساليو؟</span>
                         <i class="fa-solid fa-chevron-down transition-transform duration-300" :class="selected === 4 ? 'rotate-180 text-royal-gold-400' : ''"></i>
@@ -434,18 +437,18 @@
     <!-- CTA Section -->
     <section id="contact" class="py-24">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative rounded-3xl overflow-hidden p-12 md:p-20 text-center">
+            <div class="relative rounded-3xl overflow-hidden p-12 md:p-20 text-center" data-aos="zoom-in">
                 <!-- Background Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-royal-gold-600 to-king-green-800 opacity-90"></div>
                 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 mix-blend-overlay"></div>
                 
                 <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-black mb-6 text-white drop-shadow-lg">مستعد تبدا؟</h2>
-                    <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 text-white drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">مستعد تبدا؟</h2>
+                    <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
                         ما تخليش فكرتك تبقى غير فكرة. تواصل معنا دابا و يلاه نبنيو المستقبل ديالك.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
                         <a href="https://wa.me/212762545638?text=Salam%20Wiicode%2C%20bghit%20nstafser%203la%20lkhadamat%20dyalkom." target="_blank" class="px-8 py-4 bg-white text-king-green-900 text-lg font-bold rounded-full hover:scale-105 transition-transform shadow-xl flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
                             تواصل عبر واتساب
@@ -479,5 +482,15 @@
         </div>
     </footer>
 
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiicode.ma | Brand Guide (Darija)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="asset/SmallLogo.png">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        'king-green': {
+                            950: '#002416',
+                            900: '#013220',
+                            800: '#0b4630',
+                            700: '#155d42',
+                            600: '#1e7e5a',
+                        },
+                        'royal-gold': {
+                            300: '#e5c56d',
+                            400: '#d4af37',
+                            500: '#c5a059',
+                            600: '#aa8c49',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #002416; color: #f3f4f6; }
+        .glass {
+            background: rgba(11, 70, 48, 0.3);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass border-b border-white/10 mb-10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="asset/SmallLogo.png" alt="Logo" class="h-10">
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg text-royal-gold-400 leading-none">WIICODE</span>
+                    <span class="text-xs text-gray-400">Brand Guide</span>
+                </div>
+            </div>
+            <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-right ml-1"></i> رجوع للموقع
+            </a>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-6">
+        
+        <!-- Intro -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 text-gradient">دليل الهوية البصرية</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                هادا هو الـ <span class="text-royal-gold-400 font-bold">Brand Guide</span> ديال Wiicode.ma. 
+                أي واحد غادي يخدم معانا (Designer, Developer, Marketing) خاصو يتبع هاد القواعد باش نبقاو ديما Pro ومتميزين.
+            </p>
+        </header>
+
+        <!-- 1. Colors -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="bg-royal-gold-500 text-black w-8 h-8 rounded-full flex items-center justify-center text-lg">1</span>
+                الألوان (Colors)
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Primary -->
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-white">اللون الأساسي (King Green)</h3>
+                    <p class="text-gray-400 text-sm mb-4">كنخدمو بيه فالخلفيات (Backgrounds) باش نعطيو طابع فخم وعميق.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-lg shadow-lg bg-king-green-950 border border-white/10"></div>
+                            <div>
+                                <div class="font-bold font-mono text-lg">#002416</div>
+                                <div class="text-xs text-gray-500">Main Background (950)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-lg shadow-lg bg-king-green-900 border border-white/10"></div>
+                            <div>
+                                <div class="font-bold font-mono text-lg">#013220</div>
+                                <div class="text-xs text-gray-500">Secondary BG (900)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accent -->
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-royal-gold-400">لون التميز (Royal Gold)</h3>
+                    <p class="text-gray-400 text-sm mb-4">كنستعملوه فـ Les boutons, العناوين المهمة، و أي حاجة بغيناها تبان (Highlight).</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-lg shadow-lg bg-royal-gold-400"></div>
+                            <div>
+                                <div class="font-bold font-mono text-lg">#d4af37</div>
+                                <div class="text-xs text-gray-500">Primary Gold (400)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-lg shadow-lg bg-royal-gold-500"></div>
+                            <div>
+                                <div class="font-bold font-mono text-lg">#c5a059</div>
+                                <div class="text-xs text-gray-500">Button Hover (500)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Typography -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="bg-royal-gold-500 text-black w-8 h-8 rounded-full flex items-center justify-center text-lg">2</span>
+                الخط (Typography)
+            </h2>
+            <div class="glass p-8 rounded-2xl">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2">Cairo Font</h3>
+                        <p class="text-gray-400 mb-6">كنستعملو خط "Cairo" حيت عصري وكيتقرا مزيان فالعربية والإنجليزية.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-4xl font-black mb-1">العنوان الكبير كيكون غليظ</p>
+                                <span class="text-xs font-mono text-gray-500">Weight: 900 (Black)</span>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold mb-1">العناوين الفرعية والأزرار</p>
+                                <span class="text-xs font-mono text-gray-500">Weight: 700 (Bold)</span>
+                            </div>
+                            <div>
+                                <p class="text-lg font-light mb-1">النصوص والفقرات كتكون خفيفة باش ماتضرش فالعين.</p>
+                                <span class="text-xs font-mono text-gray-500">Weight: 300 (Light)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-white/5 p-6 rounded-xl text-center">
+                        <div class="text-8xl font-black text-royal-gold-400 mb-2">ع</div>
+                        <div class="text-sm text-gray-400">Modern & Geometric</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Tone of Voice -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="bg-royal-gold-500 text-black w-8 h-8 rounded-full flex items-center justify-center text-lg">3</span>
+                كيفاش كندويو (Tone of Voice)
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass p-6 rounded-xl border-r-4 border-r-green-500">
+                    <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-check text-green-500 ml-2"></i> شنو كنقولو (Do's)</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>• كندويو بدارجة نقية ومفهومة مخلطة بشوية د التقنية (Professional Darija).</li>
+                        <li>• كنركزو على "الحل" و "البيزنس" (Business First).</li>
+                        <li>• كنعطيو الثقة: "حنا معاك"، "تهنى من التقنية".</li>
+                        <li>• مثال: "طور فكرتك وبدا المشروع ديالك دابا."</li>
+                    </ul>
+                </div>
+                <div class="glass p-6 rounded-xl border-r-4 border-r-red-500">
+                    <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-xmark text-red-500 ml-2"></i> شنو ماكنقولوش (Don'ts)</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li>• ماكنكثروش من المصطلحات المعقدة (Code, API, Server) إلا للضرورة.</li>
+                        <li>• ماكنبينوش راسنا غير "Freelancers" صغار، حنا "Partners".</li>
+                        <li>• ماكنستعملوش لغة الزنقة بزاف (Slang).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. UI Elements -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="bg-royal-gold-500 text-black w-8 h-8 rounded-full flex items-center justify-center text-lg">4</span>
+                أمثلة (UI Elements)
+            </h2>
+            <div class="glass p-8 rounded-2xl flex flex-wrap gap-8 items-center justify-center">
+                
+                <!-- Primary Button -->
+                <div class="text-center">
+                    <p class="text-xs text-gray-500 mb-2">Primary Button</p>
+                    <button class="bg-royal-gold-500 text-black px-8 py-3 rounded-full font-bold shadow-[0_0_15px_rgba(197,160,89,0.4)]">
+                        ابدا مشروعك
+                    </button>
+                </div>
+
+                <!-- Secondary Button -->
+                <div class="text-center">
+                    <p class="text-xs text-gray-500 mb-2">Secondary / Glass Button</p>
+                    <button class="glass px-8 py-3 rounded-full font-medium border border-white/10 text-white">
+                        معلومات أكثر
+                    </button>
+                </div>
+
+                <!-- Gradient Text -->
+                <div class="text-center">
+                    <p class="text-xs text-gray-500 mb-2">Headline Gradient</p>
+                    <h3 class="text-3xl font-black text-gradient">فكرة، كود، نجاح</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-10 border-t border-white/5">
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Wiicode.ma Brand Guide. 
+                <br>
+                Made specifically for internal team & partners.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
